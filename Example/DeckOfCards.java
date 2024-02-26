@@ -41,12 +41,19 @@ public class DeckOfCards {
         return aCard;
     }
 
+    public Card drawFaceUpCard(){
+        Card aCard = this.drawACard();
+        aCard.flip();
+        return aCard;
+    }
+
     // accessor/getter to know how many cards
     // are left in the deck
     public int cardsLeft(){
         return this.numCards;
     }
 
+    // Fisher-Yates Shuffle (also a different name)
     public void shuffle(){
         // go through the cards
         for(int i = 0; i < this.numCards - 1; i++){

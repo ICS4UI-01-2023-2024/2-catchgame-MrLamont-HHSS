@@ -24,11 +24,11 @@ public class Doctor {
      * teleport to a random square (perhaps by using a �sonic screwdriver�).
      * Teleportation is completely random.
      *
-     * @param newRow The row the player clicked on.
-     * @param newCol The column the player clicked on.
+     * @param clickRow The row the player clicked on.
+     * @param clickCol The column the player clicked on.
      */
-    public void move(int newRow, int newCol) {
-
+    public void move(int clickRow, int clickCol) {
+        
     }
 
     /**
@@ -37,7 +37,7 @@ public class Doctor {
      * @return This Doctor's row.
      */
     public int getRow() {
-        
+        return this.row;
     }
 
     /**
@@ -46,7 +46,7 @@ public class Doctor {
      * @return This Doctor's column.
      */
     public int getCol() {
-        
+        return this.col;
     }
 
 }

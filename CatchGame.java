@@ -9,7 +9,7 @@ public class CatchGame {
      * Instance variables go up here
      * Make sure to create a Board, 3 Daleks, and a Doctor
      */
-
+    private Board gameBoard;
 
 
     /**
@@ -18,7 +18,7 @@ public class CatchGame {
      * (create people, set positions, etc.)
      */
     public CatchGame(){
-
+        this.gameBoard = new Board(12,12);
     }
 
     /**
@@ -26,7 +26,13 @@ public class CatchGame {
      * selects a square, when the Daleks move, when the game is won/lost.
      */
     public void playGame() {
-        
+        this.gameBoard.displayMessage("Click the board!");
+        this.gameBoard.putPeg(Board.GREEN, 2, 5);
+        while(true){
+            Coordinate click = this.gameBoard.getClick();
+            this.gameBoard.putPeg(Board.RED, click.getRow(), click.getCol());
+            this.gameBoard.removePeg(2, 5);
+        }
     
     }
 

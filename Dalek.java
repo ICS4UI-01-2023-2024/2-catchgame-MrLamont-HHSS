@@ -26,6 +26,9 @@ public class Dalek {
      * @param doc The Doctor to move towards.
      */
     public void advanceTowards(Doctor doc) {
+        // get the doctor's row and column
+        int docRow = doc.getRow();
+        int docCol = doc.getCol();
 
     }
 
@@ -51,7 +54,7 @@ public class Dalek {
      * Sets the Dalek to be in a crashed state.
      */
     public void crash() {
-
+        this.hasCrashed = true;
     }
 
     /**

@@ -25,6 +25,11 @@ public class Hand {
         int sum = 0;
         // go through each card
         for(int i = 0; i < this.numCards; i++){
+            // if the card is face down, skip it
+            if(this.cards[i].isFaceUp() == false){
+                // this moves on to the next i value
+                continue;
+            }
             // get the card rank
             char rank = this.cards[i].getRank();
             if(rank >= '1' && rank <= '9'){
@@ -57,5 +62,27 @@ public class Hand {
                 this.cards[i].flip();
             }
         }
+    }
+
+    public String toString(){
+        // blank String for the output
+        String output = "";
+        // add the name and move to new line
+        output += this.name + "\n";
+        // add all the cards
+        output += "CARDS: ";
+        // go through each card and and them
+        for(int i = 0; i < this.numCards; i++){
+            // this will automatically call toString on card
+            output += this.cards[i];
+            // decide if we need a comma
+            if(i < this.numCards - 1){
+                output += ", ";
+            }
+        }
+        // add a new line and add the total
+        output += "\nTOTAL: " + this.handTotal();
+        // return our new String
+        return output;
     }
 }
